@@ -1,4 +1,26 @@
-import { Card } from "../../components";
+import {
+  BootstrapIcon,
+  Card,
+  CLogo,
+  CSSIcon,
+  DockerIcon,
+  GitIcon,
+  HtmlIcon,
+  JavaICon,
+  JavaScriptIcon,
+  KotlinIcon,
+  MYSQLIcon,
+  NetIcon,
+  NodeJsLogo,
+  NPMIcon,
+  PostGresIcon,
+  PythonIcon,
+  ReactIcon,
+  StoryBookIcon,
+  SupabaseIcon,
+  TailwindIcon,
+  VercelIcon,
+} from "../../components";
 import {
   DiscordLogo,
   GitHubLogo,
@@ -40,7 +62,7 @@ function Home() {
             </button>
             <button className="flex flex-row items-center gap-1 rounded-lg border border-white px-4 py-1 text-xs text-white transition-colors hover:bg-gray-700">
               <RoundCircle className="size-2.5" color="green" />
-              <span>Let's Talk</span>
+              <span>Open to work</span>
             </button>
           </div>
         </nav>
@@ -66,7 +88,7 @@ function Home() {
           </p>
           <p className="hero-name text-yellow glitch">
             <span className="glitch" data-text="Harsh Hemraz">
-              Hemraz
+              Hemraz.
             </span>
           </p>
           <p className="text-primary/90 text-sm sm:text-base font-semibold">
@@ -86,7 +108,8 @@ function Home() {
         <div className="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-3 mb-4">
           <p className="text-yellow whitespace-nowrap">Featured Projects</p>
           <p className="text-primary/70 text-base sm:text-[10px] ">
-            -- A section of recent projects, from idea to interactive experience
+            -- A section of recent projects, from idea to interactive experience{" "}
+            <RoundCircle />
           </p>
         </div>
         <div className="grid grid-cols-1 gap-4 pb-10 sm:grid-cols-2 lg:grid-cols-3">
@@ -142,7 +165,7 @@ function Home() {
             title="Niom Parts"
             description="An e-commerce website is under construction. More products and features are coming soon!
 "
-            link="hshsh"
+            link="underconstruction"
             img={niomParts}
             avatars={[
               {
@@ -162,9 +185,118 @@ function Home() {
         </div>
       </section>
 
-      <section>
-        <img src={profilePic} className="p-10 h-100 w-100"></img>
+      <section className="card-container textsection">
+        <div className="mb-6">
+          <p className="mb-2 text-[10px] tracking-[0.3em] text-primary/60">
+            02 <span className="text-yellow">—</span> WHAT I WORK WITH
+          </p>
+          <div className="flex flex-col gap-2 sm:flex-row sm:items-baseline sm:gap-4">
+            <h2 className="text-3xl text-primary sm:text-4xl">
+              Skills <span className="text-yellow">Preview</span>
+            </h2>
+            <p className="text-xs text-primary/70">
+              -- Built through real projects, client work, and continuous
+              learning.
+            </p>
+          </div>
+        </div>
+
+        <div className="grid gap-8 lg:grid-cols-[minmax(220px,0.8fr)_2fr] lg:items-center">
+          <div className="mx-auto w-full max-w-sm lg:mx-0">
+            <img
+              src={profilePic}
+              alt="Harsh Hemraz"
+              className="aspect-square w-full rounded-lg object-cover"
+            />
+          </div>
+
+          <div className="grid grid-cols-1 gap-x-6 gap-y-5 min-[360px]:grid-cols-2 sm:grid-cols-3 lg:grid-cols-4">
+            {[
+              { name: "React", category: "Frontend", level: 88 },
+              { name: "HTML5", category: "Frontend", level: 95 },
+              { name: "CSS3", category: "Frontend", level: 92 },
+              { name: "Tailwind", category: "Frontend", level: 90 },
+              { name: "Docker", category: "Tools", level: 65 },
+              { name: "Java", category: "Applications", level: 70 },
+              { name: "C#", category: "Backend", level: 68 },
+              { name: "Bootstrap", category: "Frontend", level: 55 },
+              { name: "JavaScript", category: "Frontend", level: 90 },
+              { name: "PostgreSQL", category: "Backend", level: 85 },
+              { name: "Github", category: "Version Control", level: 80 },
+              { name: "Supabase", category: "Backend", level: 60 },
+              { name: "node.js", category: "Backend", level: 50 },
+              { name: "MYSQL", category: "Backend", level: 50 },
+              { name: "Python", category: "LLM", level: 25 },
+              { name: "NPM", category: "Pakage Manager", level: 40 },
+              { name: "Vercel", category: "Cloud", level: 90 },
+              { name: "Storybook", category: "Version Control", level: 60 },
+              { name: "Kotlin", category: "Mobile Development", level: 20 },
+            ].map((skill) => (
+              <div key={skill.name} className="min-w-0">
+                <div className="mb-2 flex items-baseline justify-between gap-2">
+                  <h3 className="text-sm font-semibold text-primary">
+                    {skill.name}
+                  </h3>
+                  <span className="text-[10px] text-primary/60">
+                    {skill.level}%
+                  </span>
+                </div>
+                <p className="mb-2 truncate text-[9px] uppercase tracking-[0.12em] text-primary/60">
+                  {skill.category}
+                </p>
+                <div
+                  className="h-1 w-full overflow-hidden rounded-full bg-primary/10"
+                  role="meter"
+                  aria-label={`${skill.name} proficiency`}
+                  aria-valuemin={0}
+                  aria-valuemax={100}
+                  aria-valuenow={skill.level}
+                >
+                  <div
+                    className="h-full rounded-full bg-yellow"
+                    style={{ width: `${skill.level}%` }}
+                  />
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="flex flex-wrap items-center justify-center gap-3 py-10 [&>svg]:size-[52px] [&>svg]:shrink-0">
+          <HtmlIcon />
+          <ReactIcon />
+          <CSSIcon />
+          <TailwindIcon />
+          <DockerIcon />
+          <JavaICon />
+          <BootstrapIcon />
+          <CLogo />
+          <JavaScriptIcon />
+          <PostGresIcon />
+          <GitIcon />
+          <NetIcon />
+          <SupabaseIcon />
+          <NodeJsLogo />
+          <MYSQLIcon />
+          <PythonIcon />
+          <NPMIcon />
+          <VercelIcon />
+          <StoryBookIcon />
+          <KotlinIcon />
+        </div>
       </section>
+
+      <footer className=" textsection">
+        {" "}
+        <h2 className="text-3xl text-primary sm:text-4xl">
+          Let's create something <span className="text-yellow">amazing.</span>
+        </h2>
+        <p className="text-primary/40 pt-1">
+          Open to new opportunities, collaborations, and building the next big
+          thing. Let's create something amazing together—or at least something
+          that doesn't crash on launch.
+        </p>
+      </footer>
     </>
   );
 }

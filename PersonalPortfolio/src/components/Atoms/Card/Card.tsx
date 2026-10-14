@@ -30,7 +30,7 @@ export const Card = ({
         alt={`${title} project preview`}
         className="aspect-video w-full h-full lg:h-46 rounded-sm object-cover"
       />
-      <p className="text-white text-sm sm:text-base font-bold truncate">
+      <p className="text-white text-sm sm:text-base font-bold leading-tight break-words">
         {title}
       </p>
       <p className="text-white/70 text-[10px] sm:text-xs">{description}</p>
