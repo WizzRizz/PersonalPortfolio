@@ -1,0 +1,94 @@
+@import url("https://fonts.googleapis.com/css2?family=Michroma&family=Orbitron:wght@400..900&family=Oswald:wght@200..700&display=swap");
+@import "tailwindcss";
+@import "Components/Animation/glitchAnimation.module.css";
+
+@theme {
+  --color-yellow: #d8ec73;
+  --color-primary: white;
+}
+html,
+body,
+#root {
+  margin: 0;
+  min-height: 100%;
+  min-height: 100vh;
+}
+
+body {
+  min-height: 100vh;
+  background-color: #00101d;
+}
+.hero {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 2171 / 724;
+  background-image: url("./assets/images/topphoto.png");
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.hero::after {
+  position: absolute;
+  inset: auto 0 0;
+  height: clamp(2rem, 8vh, 5rem);
+  background: linear-gradient(transparent, #00101d);
+  content: "";
+  pointer-events: none;
+}
+
+.hero nav {
+  position: absolute;
+  inset: 0 0 auto;
+  z-index: 1;
+  gap: 0.75rem;
+  padding-right: clamp(0.75rem, 3vw, 2rem);
+  padding-left: clamp(0.75rem, 3vw, 2rem);
+}
+.card-container {
+  padding-right: clamp(0.75rem, 3vw, 2rem);
+  padding-left: clamp(0.75rem, 3vw, 2rem);
+}
+.header,
+.textsection {
+  font-family: "Michroma", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.hero nav > div {
+  gap: clamp(0.4rem, 1.5vw, 1rem);
+}
+
+.hero-name {
+  font-size: clamp(2rem, 6vw, 3.75rem);
+  line-height: 1.15;
+}
+
+@media (min-width: 481px) and (max-width: 1100px) {
+  .hero {
+    background-image: url("./assets/images/topphotomob.png");
+    background-size: cover;
+    background-position: center top;
+    min-height: 100vh;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    background-image: url("./assets/images/topphotomob.png");
+    background-size: cover;
+    background-position: center top;
+    aspect-ratio: auto;
+    min-height: 100vh;
+  }
+
+  .hero nav .header {
+    font-size: clamp(0.75rem, 3.4vw, 1rem);
+  }
+
+  .hero nav button {
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
+  }
+}
