@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Michroma&family=Orbitron:wght@400..900&family=Oswald:wght@200..700&display=swap");
 @import "tailwindcss";
 @import "Components/Animation/glitchAnimation.module.css";
+@import "Components/Animation/hover.module.css";
 
 @theme {
   --color-yellow: #d8ec73;
@@ -22,7 +23,7 @@ body {
   position: relative;
   width: 100%;
   aspect-ratio: 2171 / 724;
-  background-image: url("./assets/images/topphoto.png");
+  background-image: url("./assets/topphoto.png");
   background-position: top center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -67,7 +68,7 @@ body {
 
 @media (min-width: 481px) and (max-width: 1100px) {
   .hero {
-    background-image: url("./assets/images/topphotomob.png");
+    background-image: url("./assets/topphotomob.png");
     background-size: cover;
     background-position: center top;
     min-height: 100vh;
@@ -76,7 +77,7 @@ body {
 
 @media (max-width: 480px) {
   .hero {
-    background-image: url("./assets/images/topphotomob.png");
+    background-image: url("./assets/topphotomob.png");
     background-size: cover;
     background-position: center top;
     aspect-ratio: auto;

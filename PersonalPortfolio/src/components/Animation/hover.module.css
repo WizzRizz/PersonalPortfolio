@@ -1,0 +1,207 @@
+.hover-mode {
+  position: relative;
+  transition:
+    transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.4s ease-out,
+    box-shadow 0.4s ease-out,
+    background-color 0.4s ease-out;
+  /* overflow: hidden and isolation removed from here */
+}
+
+/* new wrapper — clips ONLY the droplet effects, not the whole card */
+.hover-fx {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  overflow: hidden;
+  pointer-events: none;
+  isolation: isolate;
+  z-index: 0;
+}
+
+.hover-fx .droplets-a {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(
+      circle,
+      color-mix(in srgb, var(--color-yellow) 90%, transparent) 60%,
+      transparent 70%
+    ),
+    radial-gradient(
+      circle,
+      color-mix(in srgb, var(--color-yellow) 90%, transparent) 60%,
+      transparent 70%
+    ),
+    radial-gradient(
+      circle,
+      color-mix(in srgb, var(--color-yellow) 90%, transparent) 60%,
+      transparent 70%
+    ),
+    radial-gradient(
+      circle,
+      color-mix(in srgb, var(--color-yellow) 90%, transparent) 60%,
+      transparent 70%
+    ),
+    radial-gradient(
+      circle,
+      color-mix(in srgb, var(--color-yellow) 90%, transparent) 60%,
+      transparent 70%
+    );
+  background-repeat: no-repeat;
+  background-size:
+    3px 3px,
+    2px 2px,
+    4px 4px,
+    2px 2px,
+    3px 3px;
+  background-position:
+    8% -10%,
+    27% -45%,
+    46% -20%,
+    64% -60%,
+    91% -30%;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.hover-fx .droplets-b {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(
+      circle,
+      color-mix(in srgb, var(--color-secondary) 85%, transparent) 60%,
+      transparent 70%
+    ),
+    radial-gradient(
+      circle,
+      color-mix(in srgb, var(--color-secondary) 85%, transparent) 60%,
+      transparent 70%
+    ),
+    radial-gradient(
+      circle,
+      color-mix(in srgb, var(--color-secondary) 85%, transparent) 60%,
+      transparent 70%
+    ),
+    radial-gradient(
+      circle,
+      color-mix(in srgb, var(--color-secondary) 85%, transparent) 60%,
+      transparent 70%
+    );
+  background-repeat: no-repeat;
+  background-size:
+    2px 2px,
+    3px 3px,
+    2px 2px,
+    4px 4px;
+  background-position:
+    18% -70%,
+    38% -15%,
+    58% -50%,
+    78% -25%;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+/* top accent line — stays a pseudo-element on the card itself, no clipping needed */
+.hover-mode::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--color-primary),
+    var(--color-yellow),
+    transparent
+  );
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 2;
+  border-radius: 16px 16px 0 0;
+}
+
+.hover-mode:hover {
+  transform: translateY(-6px);
+  background: var(--color-yellow/10);
+  border-color: color-mix(
+    in srgb,
+    var(--color-primary) 40%,
+    var(--color-yellow)
+  );
+  box-shadow:
+    0 20px 40px -20px color-mix(in srgb, var(--color-yellow) 35%, transparent),
+    0 0 0 1px color-mix(in srgb, var(--color-yellow) 15%, transparent);
+}
+
+.hover-mode:hover::after {
+  transform: scaleX(1);
+}
+
+.hover-mode:hover .droplets-a {
+  opacity: 1;
+  animation: rain-fall-1 1.4s linear infinite;
+}
+
+.hover-mode:hover .droplets-b {
+  opacity: 1;
+  animation: rain-fall-2 2.1s linear infinite 0.3s;
+}
+
+@keyframes rain-fall-1 {
+  0% {
+    background-position:
+      8% -10%,
+      27% -45%,
+      46% -20%,
+      64% -60%,
+      91% -30%;
+  }
+  50% {
+    background-position:
+      6% 50%,
+      30% 40%,
+      44% 55%,
+      67% 35%,
+      89% 45%;
+  }
+  100% {
+    background-position:
+      9% 120%,
+      25% 130%,
+      48% 115%,
+      63% 135%,
+      92% 125%;
+  }
+}
+
+@keyframes rain-fall-2 {
+  0% {
+    background-position:
+      18% -70%,
+      38% -15%,
+      58% -50%,
+      78% -25%;
+  }
+  50% {
+    background-position:
+      20% 30%,
+      35% 55%,
+      60% 40%,
+      75% 50%;
+  }
+  100% {
+    background-position:
+      17% 130%,
+      40% 120%,
+      57% 140%,
+      80% 115%;
+  }
+}
