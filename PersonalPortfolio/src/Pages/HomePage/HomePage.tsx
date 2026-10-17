@@ -108,7 +108,7 @@ function Home() {
           <p className="text-primary/90 text-sm sm:text-base font-semibold">
             - Fullstack Developer / AI Enthusiast
           </p>
-          <p className="text-sm text-primary/70 mt-3 w-full sm:w-172 mb-10 lg:mb-1">
+          <p className="text-sm text-primary/85 mt-3 w-full sm:w-172 mb-10 lg:mb-1">
             {" "}
             Software Engineering student passionate about building modern web
             apps and AI-driven solutions. Skilled in Java, C#, React,
@@ -122,8 +122,8 @@ function Home() {
         <div className="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-3 mb-4">
           <p className="text-yellow whitespace-nowrap">Featured Projects</p>
           <p className="text-primary/70 text-base sm:text-[10px] ">
-            -- A section of recent projects, from idea to interactive experience{" "}
-            <RoundCircle />
+            -- A section of recent projects, from idea to interactive
+            experience{" "}
           </p>
         </div>
         <div className="grid grid-cols-1 gap-4 pb-10 sm:grid-cols-2 lg:grid-cols-3">
