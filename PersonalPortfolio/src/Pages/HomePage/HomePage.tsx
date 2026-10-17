@@ -33,6 +33,7 @@ import niomUI from "../../assets/niomUI.png";
 import DiscordDashlink from "../../assets/DiscordLink.png";
 import niomParts from "../../assets/niomParts.png";
 import profilePic from "../../assets/profilePic.png";
+import textImg from "../../assets/text.png";
 
 const goDiscord = () => {
   window.open("https://discord.com/users/353953706384818177", "_blank");
@@ -42,6 +43,19 @@ const goGitHub = () => {
 };
 const goLinkedIn = () => {
   window.open("https://www.linkedin.com/in/harsh-hemraz-38317b2b1/", "_blank");
+};
+
+const phoneNumber = "23058390976";
+
+const message =
+  "Hello Harsh! I came across your portfolio and would like to discuss a potential project or opportunity with you. Are you available to chat?";
+
+const handleSendMessage = () => {
+  const encodedMessage = encodeURIComponent(message);
+
+  const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+
+  window.open(whatsappUrl, "_blank", "noopener,noreferrer");
 };
 
 function Home() {
@@ -262,7 +276,7 @@ function Home() {
           </div>
         </div>
 
-        <div className="flex flex-wrap items-center justify-center gap-3 py-10 [&>svg]:size-[52px] [&>svg]:shrink-0">
+        <div className="flex flex-wrap items-center justify-center gap-3 py-10 [&>svg]:shrink-0 ">
           <HtmlIcon />
           <ReactIcon />
           <CSSIcon />
@@ -286,15 +300,36 @@ function Home() {
         </div>
       </section>
 
-      <footer className=" textsection">
-        {" "}
-        <h2 className="text-3xl text-primary sm:text-4xl">
-          Let's create something <span className="text-yellow">amazing.</span>
-        </h2>
-        <p className="text-primary/40 pt-1">
-          Open to new opportunities, collaborations, and building the next big
-          thing. Let's create something amazing together—or at least something
-          that doesn't crash on launch.
+      <footer className="textsection card-container footer-shrine flex flex-col">
+        <div className="relative z-10 flex w-full flex-row items-start justify-between gap-3 sm:gap-10">
+          {/* Left: title + text + button */}
+          <div className="flex min-w-0 flex-1 flex-col items-start">
+            <h2 className="text-xl leading-tight text-primary sm:text-3xl lg:text-4xl">
+              Let's create something{" "}
+              <span className="text-yellow">amazing.</span>
+            </h2>
+            <p className="mt-3 max-w-2xl text-xs leading-relaxed text-primary/60 sm:text-base">
+              Open to new opportunities, collaborations, and building the next
+              big thing. Let's create something amazing together—or at least
+              something that doesn't crash on launch.
+            </p>
+            <button
+              className="self-start text-black bg-yellow flex flex-row rounded-sm p-2 mt-4 hover:bg-yellow/50"
+              onClick={handleSendMessage}
+            >
+              Get In Touch
+            </button>
+          </div>
+
+          <img
+            src={textImg}
+            className="h-auto w-[35%] max-w-40 shrink-0 sm:w-[25%] sm:max-w-120"
+            alt=""
+          />
+        </div>
+
+        <p className="w-full flex justify-center text-yellow mt-auto ">
+          © Harsh Hemraz
         </p>
       </footer>
     </>

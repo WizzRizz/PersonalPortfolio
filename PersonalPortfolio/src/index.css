@@ -93,3 +93,23 @@ body {
     padding-left: 0.5rem;
   }
 }
+
+.footer-shrine {
+  position: relative;
+  isolation: isolate;
+  min-height: 26rem;
+  overflow: hidden;
+  background-image: url("./assets/shrine.png");
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: 100% auto;
+  padding-block: clamp(1.5rem, 6vw, 5rem);
+}
+
+@media (min-width: 768px) {
+  .footer-shrine {
+    background-position: center;
+    background-size: cover;
+    padding-block: clamp(1rem, 8vw, 8rem);
+  }
+}
