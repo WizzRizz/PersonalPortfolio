@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Michroma&family=Orbitron:wght@400..900&family=Oswald:wght@200..700&display=swap");
 @import "tailwindcss";
-@import "Components/Animation/glitchAnimation.module.css";
-@import "Components/Animation/hover.module.css";
+@import "components/Animation/glitchAnimation.module.css";
+@import "components/Animation/hover.module.css";
 
 @theme {
   --color-yellow: #d8ec73;
